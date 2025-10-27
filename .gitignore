@@ -1,0 +1,16 @@
+# Ambiente virtual
+venv/
+
+# Arquivos compilados
+*.pyc
+*.exe
+__pycache__/
+
+# Arquivo de ambiente
+.env
+
+# Logs
+*.log
+
+# Utilitários
+utils/
