@@ -5,13 +5,17 @@
 
 using namespace std;
 
+
 void solve(vector<pair<vector<int>, int>>& adjacency_list, int start, int& counter){
     if (adjacency_list[start].second < 1)
     {
         adjacency_list[start].second = 1;
+        
         for (size_t i = 0; i < adjacency_list[start].first.size(); i++)
         {
-            /* code */
+            counter++;
+            cout << "counter" << counter;
+            solve(adjacency_list,adjacency_list[start].first[i], counter);
         }
         
     }
@@ -27,7 +31,7 @@ int main(){
     cin.tie(nullptr);
     // v what points ; check if alredy pass into this vertex
     vector<pair<vector<int>, int>> adjacency_list;
-    int loop, start, temp_node1, temp_node2, v, a;
+    int loop, start, temp_node1, temp_node2, v, a, counter;
 
     cin >> loop;
 
@@ -55,7 +59,14 @@ int main(){
             
             if(!is_in) adjacency_list[temp_node1].first.push_back(temp_node2);
         }
+        counter = 0;
 
+        for (size_t i = 0; i < adjacency_list.size(); i++)
+        {
+            solve(adjacency_list, i, counter);
+        }
+
+        cout << counter << "\n";
         adjacency_list.clear();
 
     }
