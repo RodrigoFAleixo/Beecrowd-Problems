@@ -4,6 +4,7 @@ venv/
 # Arquivos compilados
 *.pyc
 *.exe
+*.txt
 __pycache__/
 
 # Arquivo de ambiente
